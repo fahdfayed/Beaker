@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "485192720663",
+    "firebase_url": "https://uofgbeaker-default-rtdb.firebaseio.com",
+    "project_id": "uofgbeaker",
+    "storage_bucket": "uofgbeaker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485192720663:android:2ae7ef89447a3f55b69752",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.Beaker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485192720663-rk1bouobsuc3npm0ugcjfetddij9fudj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjneA1tgpDSR13KdgTiDXvSSSDA_Pedok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485192720663-rk1bouobsuc3npm0ugcjfetddij9fudj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "485192720663-1rugko4sehbgjs54jmf33hbi9s28sdr0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.DefaultCompany.Beaker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
