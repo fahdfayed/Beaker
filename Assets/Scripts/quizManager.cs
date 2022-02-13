@@ -22,11 +22,28 @@ public class quizManager : MonoBehaviour
     void generateQ(){
         currentQ = Random.Range(0, QnA.Count);
         qText.text = QnA[currentQ].question;
+
+        setAns();
+
     }
 
     void setAns(){
         for (int i= 0; i < choices.Length; i++){
+            // is wrong by default
+            choices[i].GetComponent<answerScript>().isCorrect = false;
             choices[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQ].answers[i];
+
+            // i + 1 cuz array starts from 0 and the correct answer is from 1-4
+            if (QnA[currentQ].correctAns == i+1){
+                choices[i].GetComponent<answerScript>().isCorrect = true;
+            }
         }
+    }
+
+    // will generate the next question once correct answer is chosen
+    public void correct(){
+        // removes this question that has already been asked
+        QnA.RemoveAt(currentQ);
+        generateQ();
     }
 }
