@@ -1,6 +1,6 @@
 [System.Serializable]
 
-public class QuestAndAns : MonoBehaviour
+public class QuestAndAns
 {
     public string question;
     public string[] answers;
