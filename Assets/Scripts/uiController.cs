@@ -19,7 +19,8 @@ public class uiController : MonoBehaviour
 
     public GameObject nav;
     public float baseNavX;
-
+    public Animator dropDown;
+    public bool collapsed = true;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -85,5 +86,24 @@ public class uiController : MonoBehaviour
         profileSprite.color = new Color32(160, 160, 160, 255);
         SceneManager.LoadScene("settings");
     
-}}
+    }
+    private void Move()
+    {
+        if (dropDown == null)
+        {
+            GameObject drop = GameObject.FindGameObjectWithTag("dropDown");
+            dropDown = drop.GetComponent<Animator>();
+        }
+        if (!collapsed)
+        {
+            dropDown.SetTrigger("collapse");
+            collapsed = true;
+        }
+        else
+        {
+            dropDown.SetTrigger("expand");
+            collapsed = false;
+        }
+    }
+}
     

@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class relayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private GameObject ui;
+    private void Move()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ui = GameObject.FindGameObjectWithTag("navManager");
+        ui.SendMessage("Move");
     }
 }
