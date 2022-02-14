@@ -13,9 +13,9 @@ public class compoundButtonController : MonoBehaviour
     {
         compound = c;
         char[] split = compound.name.ToCharArray();
-        split = split.Take(7).ToArray();
+        split = split.Take(12).ToArray();
         string cropped = (string.Join("", split));
-        cName.text = cropped;
+        cName.text = cropped + "...";
     }
     public void Spawn()
     {
