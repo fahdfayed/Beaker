@@ -20,10 +20,15 @@ public class quizManager : MonoBehaviour
     }
 
     void generateQ(){
-        currentQ = Random.Range(0, QnA.Count);
-        qText.text = QnA[currentQ].question;
+        if (QnA.Count > 0){
+            currentQ = Random.Range(0, QnA.Count);
+            qText.text = QnA[currentQ].question;
 
-        setAns();
+            setAns();
+        }
+        else{
+            Debug.Log("Out of questions");
+        }
 
     }
 
