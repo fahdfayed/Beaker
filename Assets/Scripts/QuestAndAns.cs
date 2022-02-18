@@ -1,5 +1,5 @@
-[System.Serializable]
 
+[System.Serializable]
 public class QuestAndAns
 {
     public string question;
