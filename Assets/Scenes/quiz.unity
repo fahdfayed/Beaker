@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1076188641}
+  quizManager: {fileID: 0}
 --- !u!1 &188438163
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1076188641}
+  quizManager: {fileID: 0}
 --- !u!1 &1076188640
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,38 +1005,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1076188640}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbb13f16b6ad9444fa386099170cca21, type: 3}
+  m_Script: {fileID: 11500000, guid: 48eef006a8c3e47798b9014222de4cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  QnA:
-  - question: What is the chemical formula of water ?
-    answers:
-    - H2O
-    - HO
-    - OH
-    - H3O
-    correctAns: 0
-  - question: 'What colour is a banana ? '
-    answers:
-    - green
-    - yellow
-    - pink
-    - red
-    correctAns: 1
-  - question: What is our team name ?
-    answers:
-    - UniTym
-    - Unity
-    - United
-    - George
-    correctAns: 0
-  choices:
-  - {fileID: 1690378273}
-  - {fileID: 15658837}
-  - {fileID: 1019929822}
-  - {fileID: 1158731847}
-  currentQ: 0
-  qText: {fileID: 1402989332}
+  JsonText: {fileID: 4900000, guid: af22f1cb3cc3043269d0e3f5b608ed45, type: 3}
+  easyList:
+    easyData: []
 --- !u!4 &1076188642
 Transform:
   m_ObjectHideFlags: 0
@@ -1198,7 +1172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1076188641}
+  quizManager: {fileID: 0}
 --- !u!1 &1256152562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,19 +1497,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1690378276}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1690378278}
-        m_TargetAssemblyTypeName: answerScript, Assembly-CSharp
-        m_MethodName: Answer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1690378276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1587,7 +1549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCorrect: 0
-  quizManager: {fileID: 1076188641}
+  quizManager: {fileID: 0}
 --- !u!1 &1997166357
 GameObject:
   m_ObjectHideFlags: 0

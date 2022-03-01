@@ -14,8 +14,9 @@ public class quizManager : MonoBehaviour
     public GameObject[] choices;
     public int currentQ;
     public Text qText;
-
+    
     private void Start(){
+        
         generateQ(); 
     }
 
@@ -42,10 +43,10 @@ public class quizManager : MonoBehaviour
             // each button has text as a child, gets child allows us to access the text of the button, then get component<txt) allows us to see the text
             // wrote transform to use the properties from that library
             // blabla.text sets the text
-            choices[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQ].answers[i];
+            choices[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQ].choices[i];
 
             // i + 1 cuz array starts from 0 and the correct answer is from 1-4
-            if (QnA[currentQ].correctAns == i){
+            if (QnA[currentQ].ansIndex == i){
                 choices[i].GetComponent<answerScript>().isCorrect = true;
             }
         }
