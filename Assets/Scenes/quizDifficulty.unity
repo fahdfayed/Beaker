@@ -209,7 +209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1743445124}
         m_TargetAssemblyTypeName: quizManager, Assembly-CSharp
-        m_MethodName: goQuiz
+        m_MethodName: goQuizEasy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -477,7 +477,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1743445124}
         m_TargetAssemblyTypeName: quizManager, Assembly-CSharp
-        m_MethodName: goQuiz
+        m_MethodName: goQuizHard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1668,7 +1668,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1743445124}
         m_TargetAssemblyTypeName: quizManager, Assembly-CSharp
-        m_MethodName: goQuiz
+        m_MethodName: goQuizMed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

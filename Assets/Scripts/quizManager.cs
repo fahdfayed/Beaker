@@ -6,33 +6,63 @@ using UnityEngine.UI;
 
 public class quizManager : MonoBehaviour
 {
-    public void goQuiz(){
-        SceneManager.LoadScene("quiz");
+    // scene loaders
+    public void goQuizEasy(){
+        SceneManager.LoadScene("quizEasy");
     }
+    public void goQuizMed(){
+        SceneManager.LoadScene("quizMed");
+    }
+    public void goQuizHard(){
+        SceneManager.LoadScene("quizHard");
+    }
+
 
     public List<QuestAndAns> QnA;
     public GameObject[] choices;
     public int currentQ;
     public Text qText;
-    
+    public Text totalScore;
+
+    public GameObject quizPanel;
+    public GameObject goPanel;
+    int totalQues = 0;
+    public int score;
+
     private void Start(){
+        totalQues = QnA.Count;
         
+        goPanel.SetActive(false);
         generateQ(); 
     }
+    public void gameOver(){
+        quizPanel.SetActive(false);
+        goPanel.SetActive(true);
+        
+        totalScore.text = score + "/" + totalQues;
+    }
 
-    void generateQ(){
+    public void returnToMenu()
+    {
+        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void generateQ()
+    {
         if (QnA.Count > 0){
             currentQ = Random.Range(0, QnA.Count);
-            /// .question gets te question from the QuestandAns script
             qText.text = QnA[currentQ].question;
-        
             setAns();
+
         }
-        else{
-            Debug.Log("Out of questions");
+        else  
+        {
+            Debug.Log("No questions left");
+            gameOver();
         }
 
-    }
+    } 
 
     // creates answer for the question
     void setAns(){
@@ -44,21 +74,26 @@ public class quizManager : MonoBehaviour
             // wrote transform to use the properties from that library
             // blabla.text sets the text
             choices[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQ].choices[i];
-
-            // i + 1 cuz array starts from 0 and the correct answer is from 1-4
             if (QnA[currentQ].ansIndex == i){
                 choices[i].GetComponent<answerScript>().isCorrect = true;
             }
         }
-    }
+    } 
 
     // will generate the next question once correct answer is chosen
     public void correct(){
         // removes this question that has already been asked
         scoreScript.instance.addPoint();
+        score ++;
+        QnA.RemoveAt(currentQ);
+        generateQ();
+        
+    } 
+
+    public void wrong(){
         QnA.RemoveAt(currentQ);
         generateQ();
     }
-
+    
     
 }
