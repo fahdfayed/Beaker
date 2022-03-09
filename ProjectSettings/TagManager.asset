@@ -8,6 +8,7 @@ TagManager:
   - settingsCog
   - navManager
   - authmanager
+  - goPanel
   layers:
   - Default
   - TransparentFX

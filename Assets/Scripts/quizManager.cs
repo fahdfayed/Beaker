@@ -22,16 +22,23 @@ public class quizManager : MonoBehaviour
     public GameObject[] choices;
     public int currentQ;
     public Text qText;
-    public Text totalScore;
+    public Text scoreText;
 
-    public GameObject quizPanel;
     public GameObject goPanel;
+    public GameObject quizPanel;
+    
     int totalQues = 0;
     public int score;
 
     private void Start(){
         totalQues = QnA.Count;
-        
+        // if(goPanel == null)
+        // {
+        //     goPanel = GameObject.FindGameObjectWithTag("goPanel");
+        //     if(goPanel == null)
+        //     Debug.LogError(name + " could not find goPanel");
+        // }
+
         goPanel.SetActive(false);
         generateQ(); 
     }
@@ -39,13 +46,14 @@ public class quizManager : MonoBehaviour
         quizPanel.SetActive(false);
         goPanel.SetActive(true);
         
-        totalScore.text = score + "/" + totalQues;
+        scoreText.text = score + "/" + totalQues;
     }
 
     public void returnToMenu()
     {
         
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("quizDifficulty");
     }
 
     public void generateQ()

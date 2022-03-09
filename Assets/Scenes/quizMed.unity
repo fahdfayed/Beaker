@@ -357,9 +357,9 @@ MonoBehaviour:
   - {fileID: 675556914}
   currentQ: 0
   qText: {fileID: 1586497651}
-  totalScore: {fileID: 132459539}
-  quizPanel: {fileID: 596449001}
+  scoreText: {fileID: 132459539}
   goPanel: {fileID: 1918409098}
+  quizPanel: {fileID: 596449001}
   score: 0
 --- !u!1 &462863275
 GameObject:
@@ -417,9 +417,9 @@ MonoBehaviour:
   choices: []
   currentQ: 0
   qText: {fileID: 0}
-  totalScore: {fileID: 132459539}
-  quizPanel: {fileID: 596449001}
+  scoreText: {fileID: 1899165300}
   goPanel: {fileID: 1918409098}
+  quizPanel: {fileID: 596449001}
   score: 0
 --- !u!114 &462863278
 MonoBehaviour:
@@ -1469,7 +1469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1357511317
 RectTransform:
   m_ObjectHideFlags: 0

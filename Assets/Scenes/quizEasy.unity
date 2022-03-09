@@ -1378,9 +1378,9 @@ MonoBehaviour:
   - {fileID: 1158731847}
   currentQ: 0
   qText: {fileID: 1402989332}
-  totalScore: {fileID: 1625017383}
+  scoreText: {fileID: 1625017383}
+  goPanel: {fileID: 974187979}
   quizPanel: {fileID: 826877052}
-  gameOverPanel: {fileID: 974187979}
   score: 0
 --- !u!4 &1076188642
 Transform:
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   choices: []
   currentQ: 0
   qText: {fileID: 0}
-  totalScore: {fileID: 1997166359}
+  scoreText: {fileID: 0}
+  goPanel: {fileID: 974187979}
   quizPanel: {fileID: 826877052}
-  gameOverPanel: {fileID: 974187979}
   score: 0
