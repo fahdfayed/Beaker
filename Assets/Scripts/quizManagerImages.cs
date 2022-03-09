@@ -1,16 +1,15 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class quizManager : MonoBehaviour
+public class quizManagerImages : MonoBehaviour
 {
-    
-    public List<QuestAndAns> QnA;
+    public List<QuesAndAnsImages> qna;
     public GameObject[] choices;
     public int currentQ;
-    public Text qText;
+    public Text questionText;
     public Text scoreText;
 
     public GameObject goPanel;
@@ -20,14 +19,13 @@ public class quizManager : MonoBehaviour
     public int score;
 
     private void Start(){
-        totalQues = QnA.Count;
+        totalQues = qna.Count;
         // if(goPanel == null)
         // {
         //     goPanel = GameObject.FindGameObjectWithTag("goPanel");
         //     if(goPanel == null)
         //     Debug.LogError(name + " could not find goPanel");
         // }
-
         goPanel.SetActive(false);
         generateQ(); 
     }
@@ -47,9 +45,9 @@ public class quizManager : MonoBehaviour
 
     public void generateQ()
     {
-        if (QnA.Count > 0){
-            currentQ = Random.Range(0, QnA.Count);
-            qText.text = QnA[currentQ].question;
+        if (qna.Count > 0){
+            currentQ = Random.Range(0, qna.Count);
+            questionText.text = qna[currentQ].question;
             setAns();
 
         }
@@ -70,8 +68,8 @@ public class quizManager : MonoBehaviour
             // each button has text as a child, gets child allows us to access the text of the button, then get component<txt) allows us to see the text
             // wrote transform to use the properties from that library
             // blabla.text sets the text
-            choices[i].transform.GetChild(0).GetComponent<Text>().text = QnA[currentQ].choices[i];
-            if (QnA[currentQ].ansIndex == i){
+            choices[i].transform.GetChild(0).GetComponent<Image>().sprite = qna[currentQ].choices[i];
+            if (qna[currentQ].ansIndex == i){
                 choices[i].GetComponent<answerScript>().isCorrect = true;
             }
         }
@@ -82,15 +80,13 @@ public class quizManager : MonoBehaviour
         // removes this question that has already been asked
         scoreScript.instance.addPoint();
         score ++;
-        QnA.RemoveAt(currentQ);
+        qna.RemoveAt(currentQ);
         generateQ();
         
     } 
 
     public void wrong(){
-        QnA.RemoveAt(currentQ);
+        qna.RemoveAt(currentQ);
         generateQ();
     }
-    
-    
 }

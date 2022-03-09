@@ -5,16 +5,16 @@ using UnityEngine;
 public class answerScript : MonoBehaviour
 {
     public bool isCorrect = false;
-    public quizManager quizManager;
-
+    //public quizManager quizManager;
+    public quizManagerImages quizManagerImages;
     public void Answer(){
         if(isCorrect){
-            quizManager.correct();
+            quizManagerImages.correct();
             Debug.Log("Correct answer!");
             
         }
         else{
-            quizManager.wrong();
+            quizManagerImages.wrong();
             Debug.Log("Wrong answer!");
         }
 
