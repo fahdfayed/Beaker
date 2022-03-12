@@ -797,7 +797,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 357369188}
-  quizManagerImages: {fileID: 0}
 --- !u!114 &675556917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +1011,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 357369188}
-  quizManagerImages: {fileID: 0}
 --- !u!114 &720816147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1730,7 +1728,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 357369188}
-  quizManagerImages: {fileID: 0}
 --- !u!114 &1511795303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1958,7 +1955,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCorrect: 0
   quizManager: {fileID: 357369188}
-  quizManagerImages: {fileID: 0}
 --- !u!114 &1662237761
 MonoBehaviour:
   m_ObjectHideFlags: 0

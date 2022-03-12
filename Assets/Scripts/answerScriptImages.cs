@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class answerScript : MonoBehaviour
+public class answerScriptImages : MonoBehaviour
 {
     public bool isCorrect = false;
-    public quizManager quizManager;
+    public quizManagerImages quizManagerImages;
     public void Answer(){
         if(isCorrect){
-            quizManager.correct();
+            quizManagerImages.correct();
             Debug.Log("Correct answer!");
             
         }
         else{
-            quizManager.wrong();
+            quizManagerImages.wrong();
             Debug.Log("Wrong answer!");
         }
 
     } 
 }
+

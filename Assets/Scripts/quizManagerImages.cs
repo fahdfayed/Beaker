@@ -64,13 +64,13 @@ public class quizManagerImages : MonoBehaviour
         for (int i= 0; i < choices.Length; i++){
             // is wrong by default
             // sets all the choices of that question to wrong answer
-            choices[i].GetComponent<answerScript>().isCorrect = false;
+            choices[i].GetComponent<answerScriptImages>().isCorrect = false;
             // each button has text as a child, gets child allows us to access the text of the button, then get component<txt) allows us to see the text
             // wrote transform to use the properties from that library
             // blabla.text sets the text
             choices[i].transform.GetChild(0).GetComponent<Image>().sprite = qna[currentQ].choices[i];
             if (qna[currentQ].ansIndex == i){
-                choices[i].GetComponent<answerScript>().isCorrect = true;
+                choices[i].GetComponent<answerScriptImages>().isCorrect = true;
             }
         }
     } 
