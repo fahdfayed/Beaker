@@ -6,6 +6,7 @@ using Firebase;
 using Firebase.Auth;
 using Firebase.Database;
 using TMPro;
+using System;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,6 @@ public class teamController : MonoBehaviour
     public TMP_Text[] teamMembers;
     public TMP_Text[] teamMembersScores;
     public string[] memberss;
-
     public TMP_Text teamShow;
     public string team;
     public string teamMembers1;
@@ -34,10 +34,11 @@ public class teamController : MonoBehaviour
 
     public void goIndividual()
     {
-      SceneManager.LoadScene("individualleaderboard");
+        SceneManager.LoadScene("individualleaderboard");
     }
     private IEnumerator showLeaderboard()
     {
+
         List<string> userss = new List<string>();
         List<string> scoress = new List<string>();
 
@@ -68,20 +69,32 @@ public class teamController : MonoBehaviour
             {
                 if (childSnapchot.Child("team").Value.ToString() == team)
                 {
-                    if (counter < 10)
-                    {
                         userss.Add(childSnapchot.Child("username").Value.ToString());
                         scoress.Add(childSnapchot.Child("score").Value.ToString());
-                        Debug.LogFormat("hiii {0}", userss[counter]);
-                        teamMembers[counter].text = userss[counter];
-                        teamMembersScores[counter].text = scoress[counter];
                         counter++;
-                    }
                 }
-            }
-        }
+                    int[] scoressArray = new int[userss.Count];
+                    string[] userssArray = new string[userss.Count];
 
+                    for (int i = 0; i < scoressArray.Length; i++)
+                    {
+                        userssArray[i] = userss[i];
+                        scoressArray[i] = Int32.Parse(scoress[i]);
+                    }
+                    Array.Sort(scoressArray, userssArray);
+                    Array.Reverse(scoressArray);
+                    Array.Reverse(userssArray);
+                    for (int i = 0; i < scoressArray.Length; i++)
+                    {
+                        teamMembers[i].text = userssArray[i];
+                        teamMembersScores[i].text = scoressArray[i].ToString();
+                    }
+
+                }
+
+            }
+
+        }
     }
 
-}
 
