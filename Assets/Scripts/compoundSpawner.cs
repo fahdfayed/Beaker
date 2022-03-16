@@ -59,11 +59,11 @@ public class compoundSpawner : MonoBehaviour
         filteredList.Clear();
         if (this.transform.childCount < 8)
         {
-            scroll.enabled = false;
+            //scroll.enabled = false;
         }
         else
         {
-            scroll.enabled = true;
+            //scroll.enabled = true;
         }
     }
 }
