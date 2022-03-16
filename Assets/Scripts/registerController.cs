@@ -29,13 +29,6 @@ public AuthManager authmanager;
         StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
     }
 
-    public string getTeam(){
-        System.Random random = new System.Random();
-        char[] teams = {'a', 'b', 'c'};
-        int identifier  = random.Next(0, 3);
-        return teams[identifier].ToString();
-        
-    }
     private IEnumerator Register(string _email, string _password, string _username)
     {
         if (_username == "")
@@ -109,7 +102,7 @@ public AuthManager authmanager;
                         //Now return to login screen
                         var DBTask = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("username").SetValueAsync(usernameRegisterField.text);
                         var userScore = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("score").SetValueAsync(0);
-                        var userTeam = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("team").SetValueAsync(getTeam());
+                        var userTeam = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("team").SetValueAsync("na");
                         var userRole = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("role").SetValueAsync("Member");
                         SceneManager.LoadScene("login");
                                   

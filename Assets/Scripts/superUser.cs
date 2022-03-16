@@ -46,7 +46,7 @@ public IEnumerator Start()
             {
                 if (childSnapchot.Child("username").Value.ToString() == "fahd@gmail.com")
                 {
-                    items.Add(childSnapchot.Value.ToString());
+                    items.Add(childSnapchot.Child("username").Value.ToString());
 
                 }
             }
@@ -108,8 +108,7 @@ private IEnumerator test()
         else
         {  
             DataSnapshot snapshot = DBTask.Result;
-     
-
+            
         }
 
             

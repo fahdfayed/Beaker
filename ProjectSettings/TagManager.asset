@@ -18,6 +18,7 @@ TagManager:
   - editUserName
   - editTeam
   - profilecontroller
+  - joinTeamDropdown
   layers:
   - Default
   - TransparentFX

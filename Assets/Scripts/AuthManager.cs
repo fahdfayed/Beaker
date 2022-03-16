@@ -9,6 +9,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 public class AuthManager : MonoBehaviour
 {
+    public GameObject navBar;
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
@@ -75,6 +76,7 @@ public class AuthManager : MonoBehaviour
 
     private IEnumerator Login(string _email, string _password)
     {
+        navBar = GameObject.FindGameObjectWithTag("navBar");
         //Call the Firebase auth signin function passing the email and password
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
         //Wait until the task completes
@@ -137,6 +139,8 @@ public class AuthManager : MonoBehaviour
                     }
 
             SceneManager.LoadScene("lab");// Change to user data UI
+            navBar.SetActive(true);
+
             confirmLoginText.text = "";
             
         }

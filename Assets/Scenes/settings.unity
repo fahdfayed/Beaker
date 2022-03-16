@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 0}
+  authmanager: {fileID: 0}
 --- !u!4 &1088680182
 Transform:
   m_ObjectHideFlags: 0
@@ -767,8 +768,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
+      - m_Target: {fileID: 1088680181}
+        m_TargetAssemblyTypeName: settingsController, Assembly-CSharp
         m_MethodName: SignOutButton
         m_Mode: 1
         m_Arguments:
