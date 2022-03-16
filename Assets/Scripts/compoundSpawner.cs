@@ -1,26 +1,31 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class compoundSpawner : MonoBehaviour
 {
     public List<GameObject> compoundsList;
+    public List<GameObject> filteredList;
     public GameObject listAdder;
     public GameObject button;
+    public GameObject search;
 
-    public void Start() {
-        makeGrid();
-    }
-    void makeGrid()
+    public GameObject[] buttons;
+    public void Start()
     {
-        int listSize = compoundsList.Count;
+        makeGrid(compoundsList);
+    }
+    void makeGrid(List<GameObject> compounds)
+    {
+        int listSize = compounds.Count;
         int count = 0;
         for (int i = 0; i < listSize; i++)
         {
             GameObject elem = Instantiate(button, listAdder.transform.position, Quaternion.identity);
             elem.transform.SetParent(this.gameObject.transform, false);
             elem.transform.position = listAdder.transform.position;
-            elem.SendMessage("Assign", compoundsList[i]);
+            elem.SendMessage("Assign", compounds[i]);
 
             count += 1;
             if (count == 4)
@@ -31,5 +36,23 @@ public class compoundSpawner : MonoBehaviour
             }
             listAdder.transform.localPosition = new Vector2(listAdder.transform.localPosition.x + 75, listAdder.transform.localPosition.y);
         }
+    }
+
+    void Search()
+    {
+        string searchText = search.GetComponent<TMP_InputField>().text;
+        for (int i = 0; i < compoundsList.Count; i++)
+        {
+            if (compoundsList[i].name.Contains(searchText)) {
+                filteredList.Add(compoundsList[i]);
+            }
+        }
+        buttons = GameObject.FindGameObjectsWithTag ("button");
+        foreach (GameObject child in buttons) {
+            GameObject.Destroy(child.gameObject);    
+        }
+        listAdder.transform.localPosition = (new Vector2(-115, 40));
+        makeGrid(filteredList);
+        filteredList.Clear();
     }
 }

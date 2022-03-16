@@ -26,7 +26,15 @@ StartCoroutine(LoadUserData());
 
 public void goIndividual()
 {
+StartCoroutine(LoadUserData());
 SceneManager.LoadScene("individualleaderboard");
+
+
+}
+
+public void goTeam()
+{
+SceneManager.LoadScene("teamleaderboard");
 }
 
 public void SaveDataButton()

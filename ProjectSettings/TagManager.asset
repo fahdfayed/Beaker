@@ -8,7 +8,20 @@ TagManager:
   - settingsCog
   - navManager
   - authmanager
+<<<<<<< HEAD
   - goPanel
+=======
+  - dropDown
+  - button
+  - superUser
+  - teamShow
+  - users
+  - superUserButton
+  - superUser
+  - editUsername
+  - editTeam
+  - profilecontroller
+>>>>>>> main
   layers:
   - Default
   - TransparentFX
