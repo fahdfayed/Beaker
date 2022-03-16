@@ -664,7 +664,7 @@ GameObject:
   - component: {fileID: 788060001}
   m_Layer: 0
   m_Name: ProfileController
-  m_TagString: Player
+  m_TagString: profilecontroller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -681,7 +681,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80843c7b38c72bc4f9070ff657629e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authmanager: {fileID: 0}
   userName: {fileID: 1904965606}
+  errorMessage: {fileID: 0}
 --- !u!4 &788060002
 Transform:
   m_ObjectHideFlags: 0
@@ -792,7 +794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80843c7b38c72bc4f9070ff657629e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authmanager: {fileID: 0}
   userName: {fileID: 0}
+  errorMessage: {fileID: 0}
 --- !u!1 &1091243064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,4 +1442,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80843c7b38c72bc4f9070ff657629e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authmanager: {fileID: 0}
   userName: {fileID: 1904965606}
+  errorMessage: {fileID: 0}

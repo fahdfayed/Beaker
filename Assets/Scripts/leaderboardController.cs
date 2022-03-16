@@ -20,7 +20,6 @@ public TMP_Text displayScore;
 void Awake()
 {
 authmanager = GameObject.FindGameObjectWithTag("authmanager").GetComponent<AuthManager>();
-usernameField.text = authmanager.User.Email;
 StartCoroutine(LoadUserData());
 }
 
@@ -31,7 +30,6 @@ SceneManager.LoadScene("individualleaderboard");
 
 
 }
-
 public void goTeam()
 {
 SceneManager.LoadScene("teamleaderboard");

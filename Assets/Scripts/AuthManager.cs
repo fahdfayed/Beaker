@@ -25,7 +25,6 @@ public class AuthManager : MonoBehaviour
 
 
 
-
     void Awake()
     {
         GameObject.DontDestroyOnLoad(this.gameObject);
@@ -72,7 +71,6 @@ public class AuthManager : MonoBehaviour
     
     }
     //Function for the save button
- 
 
 
     private IEnumerator Login(string _email, string _password)
@@ -123,7 +121,20 @@ public class AuthManager : MonoBehaviour
             confirmLoginText.text = "Logged In";
             StartCoroutine(LoadUserData());
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(2);        
+                
+            UserProfile profile = new UserProfile
+            {
+                DisplayName = _email,
+            };
+            var defaultUserTask = User.UpdateUserProfileAsync(profile);
+            yield return new WaitUntil(predicate: () => defaultUserTask.IsCompleted);
+              if (defaultUserTask.Exception != null)
+                    {
+                        //If there are errors handle them
+                        Debug.LogWarning(message: $"Failed to register task with {defaultUserTask.Exception}");
+                        warningLoginText.text = "Username Set Failed!";
+                    }
 
             SceneManager.LoadScene("lab");// Change to user data UI
             confirmLoginText.text = "";
@@ -177,19 +188,19 @@ public class AuthManager : MonoBehaviour
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
 
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+            yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
-        if (DBTask.Exception != null)
-        {
-            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
-        }
-        else if (DBTask.Result.Value == null)
-        {
-  
-      
-        }
-        else
-        {
+            if (DBTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+            }
+            else if (DBTask.Result.Value == null)
+            {
+    
+        
+            }
+            else
+            {
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
 

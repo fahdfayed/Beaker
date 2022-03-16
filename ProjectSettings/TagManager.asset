@@ -10,6 +10,14 @@ TagManager:
   - authmanager
   - dropDown
   - button
+  - superUser
+  - teamShow
+  - users
+  - superUserButton
+  - superuser
+  - editUserName
+  - editTeam
+  - profilecontroller
   layers:
   - Default
   - TransparentFX

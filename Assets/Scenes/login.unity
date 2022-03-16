@@ -630,6 +630,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 485036100}
   m_CullTransparentMesh: 0
+--- !u!114 &517683825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8952770946342202744, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+  m_PrefabInstance: {fileID: 8952770946455901961}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70a2777a8eed2149a1d7c1d6dafc25b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,17 +990,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538572648}
   m_CullTransparentMesh: 0
---- !u!114 &839260466 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8172116048500127354, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-  m_PrefabInstance: {fileID: 8172116048734613320}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a70a2777a8eed2149a1d7c1d6dafc25b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &852810187 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8883339442397905432, guid: 4dcbb4e202df2b2428308329797767bb, type: 3}
@@ -1077,7 +1077,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 839260466}
+      - m_Target: {fileID: 517683825}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
         m_MethodName: LoginButton
         m_Mode: 1
@@ -1347,14 +1347,14 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
+  m_ContentType: 6
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 7
   m_LineType: 0
   m_HideMobileInput: 0
   m_HideSoftKeyboard: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 7
   m_RegexValue: 
   m_GlobalPointSize: 14
   m_CharacterLimit: 0
@@ -2300,8 +2300,8 @@ MonoBehaviour:
   m_VerticalScrollbarEventHandler: {fileID: 0}
   m_LayoutGroup: {fileID: 0}
   m_ScrollSensitivity: 1
-  m_ContentType: 0
-  m_InputType: 0
+  m_ContentType: 7
+  m_InputType: 2
   m_AsteriskChar: 42
   m_KeyboardType: 0
   m_LineType: 0
@@ -2574,83 +2574,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046692761}
   m_CullTransparentMesh: 0
---- !u!1001 &8172116048734613320
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8172116048500127354, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: emailLoginField
-      value: 
-      objectReference: {fileID: 1089717641}
-    - target: {fileID: 8172116048500127354, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: passwordLoginField
-      value: 
-      objectReference: {fileID: 1877804749}
-    - target: {fileID: 8172116048500127354, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: warningLoginText
-      value: 
-      objectReference: {fileID: 485036102}
-    - target: {fileID: 8172116048500127354, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: confirmLoginText
-      value: 
-      objectReference: {fileID: 1329368684}
-    - target: {fileID: 8172116049246634774, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_Name
-      value: AuthManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634774, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_TagString
-      value: authmanager
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8172116049246634775, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7e6fb23051070a84d8664b2654f6bd27, type: 3}
 --- !u!1001 &8883339442099379155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2780,3 +2703,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dcbb4e202df2b2428308329797767bb, type: 3}
+--- !u!1001 &8952770946455901961
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8952770946342202744, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: emailLoginField
+      value: 
+      objectReference: {fileID: 1089717641}
+    - target: {fileID: 8952770946342202744, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: passwordLoginField
+      value: 
+      objectReference: {fileID: 1877804749}
+    - target: {fileID: 8952770946342202744, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: warningLoginText
+      value: 
+      objectReference: {fileID: 485036102}
+    - target: {fileID: 8952770946342202744, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: confirmLoginText
+      value: 
+      objectReference: {fileID: 1329368684}
+    - target: {fileID: 8952770946342202745, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_Name
+      value: AuthManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 436.93744
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1635.2424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -67.565674
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8952770946342202747, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fa1b27d10cc41b42890fc768c7e8aff, type: 3}
