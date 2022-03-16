@@ -482,13 +482,6 @@ MonoBehaviour:
     - Nitric Acid
     - Potassium Hydroxide
     ansIndex: 1
-  - question: Which chemical from this list is an environmental hazard ?
-    choices:
-    - 2-methyl butane
-    - Agarose
-    - Hydrogen peroxide
-    - 'Calcium chloride '
-    ansIndex: 0
   - question: Which of these chemicals is an acid ?
     choices:
     - Copper sulphate
@@ -496,6 +489,20 @@ MonoBehaviour:
     - 'Agarose '
     - 'Sodium hydroxide '
     ansIndex: 0
+  - question: Which statements about Personal Protective Equipment are true?
+    choices:
+    - You must report any damage a day after an incident
+    - 'You must pay for any damage or loss '
+    - You must use it as instructed
+    - You must store it at home for safe keeping
+    ansIndex: 2
+  - question: 'What PPE should be used when performing acid digestion ? '
+    choices:
+    - Fume hood
+    - Gloves
+    - Lab coat
+    - All of the above
+    ansIndex: 3
   choices:
   - {fileID: 720816144}
   - {fileID: 1511795300}
