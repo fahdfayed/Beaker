@@ -16,6 +16,7 @@ public class settingsController : MonoBehaviour
     public uiController ui;
     public AuthManager authmanager;
     public FirebaseAuth auth;
+    
     public DatabaseReference DBreference;
 
     public void Start()
@@ -47,6 +48,17 @@ public class settingsController : MonoBehaviour
         SceneManager.LoadScene("login");   
        
     }
+         public void goTC()
+    {
+        SceneManager.LoadScene("TC");   
+        navBar.SetActive(true);      
+    }
+    public void goFeedback()
+    {
+        SceneManager.LoadScene("Feedback");  
+        navBar.SetActive(true);       
+    }
+
 
     public void EditProfileButton()
     {  

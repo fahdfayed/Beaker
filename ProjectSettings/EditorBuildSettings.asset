@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/teamLeaderboard.unity
     guid: 45d863a56001c45458caba240115ac83
   - enabled: 1
+    path: Assets/Scenes/TC.unity
+    guid: e5877eb6b5b8b754dbc0048ce76fbf32
+  - enabled: 1
+    path: Assets/Scenes/Feedback.unity
+    guid: 62d43378a678144428c6639967b82ce0
+  - enabled: 1
     path: Assets/Scenes/individualLeaderboard.unity
     guid: 398fbeef1581bb84ebdc851d88818949
   - enabled: 1
