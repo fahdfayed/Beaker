@@ -13,6 +13,7 @@ TagManager:
   - spawner
   - search
   - scroll
+  - toucan
   layers:
   - Default
   - TransparentFX
