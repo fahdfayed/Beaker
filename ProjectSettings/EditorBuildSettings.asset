@@ -32,4 +32,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/register.unity
     guid: 30f481d0089551b41a9252cb3373a871
+  - enabled: 1
+    path: Assets/Scenes/quizEasy.unity
+    guid: 81165b9145cd7fe4cb145e563e874dc2
+  - enabled: 1
+    path: Assets/Scenes/quizMed.unity
+    guid: 0db12e7969dbe4b17ab6f137b0be3467
+  - enabled: 1
+    path: Assets/Scenes/quizHard.unity
+    guid: 0a3b36085044e489783df1fc246a6a02
   m_configObjects: {}

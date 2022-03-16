@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   compound: {fileID: 0}
   cName: {fileID: 4148430048676552350}
+  img: {fileID: 4534566554533462549}
 --- !u!114 &4803443778183032147
 MonoBehaviour:
   m_ObjectHideFlags: 0

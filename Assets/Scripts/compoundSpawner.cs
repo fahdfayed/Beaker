@@ -12,9 +12,12 @@ public class compoundSpawner : MonoBehaviour
     public GameObject search;
 
     public GameObject[] buttons;
+    public ScrollRect scroll;
+
     public void Start()
     {
         makeGrid(compoundsList);
+        scroll = GameObject.FindGameObjectWithTag("scroll").GetComponent<ScrollRect>();
     }
     void makeGrid(List<GameObject> compounds)
     {
@@ -54,5 +57,13 @@ public class compoundSpawner : MonoBehaviour
         listAdder.transform.localPosition = (new Vector2(-115, 40));
         makeGrid(filteredList);
         filteredList.Clear();
+        if (this.transform.childCount < 8)
+        {
+            scroll.enabled = false;
+        }
+        else
+        {
+            scroll.enabled = true;
+        }
     }
 }

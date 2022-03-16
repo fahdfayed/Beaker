@@ -10,6 +10,9 @@ TagManager:
   - authmanager
   - dropDown
   - button
+  - spawner
+  - search
+  - scroll
   layers:
   - Default
   - TransparentFX
@@ -46,4 +49,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: elements
+    uniqueID: 3372967099
+    locked: 0
+  - name: text
+    uniqueID: 1954233331
     locked: 0
