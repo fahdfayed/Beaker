@@ -47,4 +47,9 @@ public class settingsController : MonoBehaviour
         SceneManager.LoadScene("login");   
        
     }
+
+    public void EditProfileButton()
+    {  
+        SceneManager.LoadScene("editprofile");
+    }
 }
