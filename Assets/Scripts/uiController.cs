@@ -14,6 +14,7 @@ public class uiController : MonoBehaviour
     public Image quizSprite;
     public Image leaderboardSprite;
     public Image profileSprite;
+    public Image superUserSprite;
 
     public bool onScreen = true;
 
@@ -52,6 +53,7 @@ public class uiController : MonoBehaviour
         quizSprite.color = new Color32(160, 160, 160, 255);
         leaderboardSprite.color = new Color32(160, 160, 160, 255); 
         profileSprite.color = new Color32(160, 160, 160, 255);
+        superUserSprite.color = new Color32(160, 160, 160, 255);
         SceneManager.LoadScene("lab");
     }
     private void goQuiz()
@@ -60,6 +62,7 @@ public class uiController : MonoBehaviour
         quizSprite.color = new Color32(254, 95, 85, 255);
         leaderboardSprite.color = new Color32(160, 160, 160, 255);
         profileSprite.color = new Color32(160, 160, 160, 255);
+        superUserSprite.color = new Color32(160, 160, 160, 255);
         SceneManager.LoadScene("quizDifficulty");
     }
     private void goLeaderboard()
@@ -68,6 +71,7 @@ public class uiController : MonoBehaviour
         quizSprite.color = new Color32(160, 160, 160, 255);
         leaderboardSprite.color = new Color32(254, 95, 85, 255);
         profileSprite.color = new Color32(160, 160, 160, 255);
+        superUserSprite.color = new Color32(160, 160, 160, 255);
         SceneManager.LoadScene("teamLeaderboard");
     }
     private void goProfile()
@@ -76,6 +80,7 @@ public class uiController : MonoBehaviour
         quizSprite.color = new Color32(160, 160, 160, 255);
         leaderboardSprite.color = new Color32(160, 160, 160, 255);
         profileSprite.color = new Color32(254, 95, 85, 255);
+        superUserSprite.color = new Color32(160, 160, 160, 255);
         SceneManager.LoadScene("profile");
     }
     private void goSettings()
@@ -84,9 +89,22 @@ public class uiController : MonoBehaviour
         quizSprite.color = new Color32(160, 160, 160, 255);
         leaderboardSprite.color = new Color32(160, 160, 160, 255);
         profileSprite.color = new Color32(160, 160, 160, 255);
+        superUserSprite.color = new Color32(160, 160, 160, 255);
         SceneManager.LoadScene("settings");
     
     }
+    private void goSuperUser()
+    {
+        labSprite.color = new Color32(160, 160, 160, 255);
+        quizSprite.color = new Color32(160, 160, 160, 255);
+        leaderboardSprite.color = new Color32(160, 160, 160, 255);
+        profileSprite.color = new Color32(160, 160, 160, 255);
+        superUserSprite.color = new Color32(254, 95, 85, 255);
+        SceneManager.LoadScene("superUser");
+
+    }
+
+
     private void Move()
     {
         if (dropDown == null)

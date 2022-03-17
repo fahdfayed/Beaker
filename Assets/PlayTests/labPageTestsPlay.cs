@@ -26,10 +26,7 @@ namespace Tests
             searchBar.text = compoundInList.name;
             compoundButtonController found = GameObject.FindGameObjectWithTag("button").GetComponent<compoundButtonController>();
 
-            Debug.Log(found.compound.name);
-            Debug.Log(compoundInList.name);
-
-            Assert.AreEqual(found.compound.name,compoundInList.name);
+            Assert.AreSame(found.compound,compoundInList);
         }
         [UnityTest]
         public IEnumerator labPageTestsNonExisting()
@@ -57,7 +54,6 @@ namespace Tests
             GameObject spwn = GameObject.FindGameObjectWithTag("spawner");
             TMP_InputField searchBar = GameObject.FindGameObjectWithTag("search").GetComponent<TMP_InputField>();
             searchBar.text = "potassium";
-
             Assert.IsTrue(spwn.transform.childCount == 3);
         }
     }

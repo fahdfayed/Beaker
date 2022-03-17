@@ -41,4 +41,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/quizHard.unity
     guid: 0a3b36085044e489783df1fc246a6a02
+  - enabled: 1
+    path: Assets/Scenes/superUser.unity
+    guid: 2413cd9f389e8f24ba3d94a40c9180db
+  - enabled: 1
+    path: Assets/Scenes/editprofile.unity
+    guid: a6972aa65282fac43adc0258ce6d77e6
+  - enabled: 1
+    path: Assets/Scenes/Feedback.unity
+    guid: 62d43378a678144428c6639967b82ce0
+  - enabled: 1
+    path: Assets/Scenes/TC.unity
+    guid: e5877eb6b5b8b754dbc0048ce76fbf32
   m_configObjects: {}

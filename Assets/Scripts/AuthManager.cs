@@ -9,6 +9,7 @@ using System.Linq;
 using UnityEngine.SceneManagement;
 public class AuthManager : MonoBehaviour
 {
+    public GameObject navBar;
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
@@ -22,7 +23,6 @@ public class AuthManager : MonoBehaviour
     public TMP_InputField passwordLoginField;
     public TMP_Text warningLoginText;
     public TMP_Text confirmLoginText;
-
 
 
 
@@ -72,11 +72,11 @@ public class AuthManager : MonoBehaviour
     
     }
     //Function for the save button
- 
 
 
     private IEnumerator Login(string _email, string _password)
     {
+        navBar = GameObject.FindGameObjectWithTag("navBar");
         //Call the Firebase auth signin function passing the email and password
         var LoginTask = auth.SignInWithEmailAndPasswordAsync(_email, _password);
         //Wait until the task completes
@@ -123,9 +123,24 @@ public class AuthManager : MonoBehaviour
             confirmLoginText.text = "Logged In";
             StartCoroutine(LoadUserData());
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(2);        
+                
+            UserProfile profile = new UserProfile
+            {
+                DisplayName = _email,
+            };
+            var defaultUserTask = User.UpdateUserProfileAsync(profile);
+            yield return new WaitUntil(predicate: () => defaultUserTask.IsCompleted);
+              if (defaultUserTask.Exception != null)
+                    {
+                        //If there are errors handle them
+                        Debug.LogWarning(message: $"Failed to register task with {defaultUserTask.Exception}");
+                        warningLoginText.text = "Username Set Failed!";
+                    }
 
             SceneManager.LoadScene("lab");// Change to user data UI
+            navBar.SetActive(true);
+
             confirmLoginText.text = "";
             
         }
@@ -177,19 +192,19 @@ public class AuthManager : MonoBehaviour
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
 
-        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+            yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
-        if (DBTask.Exception != null)
-        {
-            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
-        }
-        else if (DBTask.Result.Value == null)
-        {
-  
-      
-        }
-        else
-        {
+            if (DBTask.Exception != null)
+            {
+                Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+            }
+            else if (DBTask.Result.Value == null)
+            {
+    
+        
+            }
+            else
+            {
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
 

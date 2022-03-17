@@ -28,4 +28,16 @@ public class settingsController : MonoBehaviour
             }
         }
     }
+    private void goProfile()
+    {
+        SceneManager.LoadScene("editprofile");
+    }
+    private void goTC()
+    {
+        SceneManager.LoadScene("TC");
+    }
+    private void goFeedback()
+    {
+        SceneManager.LoadScene("Feedback");
+    }
 }
