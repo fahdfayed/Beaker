@@ -13,6 +13,12 @@ TagManager:
   - spawner
   - search
   - scroll
+  - superuser
+  - superUserButton
+  - joinTeamDropdown
+  - profilecontroller
+  - mixer
+  - invalid
   layers:
   - Default
   - TransparentFX
@@ -47,6 +53,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: hiddenButton
+    uniqueID: 145243771
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

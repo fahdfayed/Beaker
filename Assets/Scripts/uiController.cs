@@ -22,6 +22,9 @@ public class uiController : MonoBehaviour
     public float baseNavX;
     public Animator dropDown;
     public bool collapsed = true;
+
+    
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);

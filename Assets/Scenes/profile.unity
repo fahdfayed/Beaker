@@ -893,7 +893,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   authmanager: {fileID: 0}
+  oopS: {fileID: 1287971896}
+  joinTeamError: {fileID: 593999506}
+  joinaTeam: {fileID: 1811981664}
+  joinButtonText: {fileID: 928947996}
+  dropdown: {fileID: 787342037}
   userName: {fileID: 1904965606}
+  errorMessage: {fileID: 593999506}
 --- !u!4 &788060002
 Transform:
   m_ObjectHideFlags: 0
@@ -2453,7 +2459,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   authmanager: {fileID: 0}
+  oopS: {fileID: 0}
+  joinTeamError: {fileID: 0}
+  joinaTeam: {fileID: 0}
+  joinButtonText: {fileID: 0}
+  dropdown: {fileID: 0}
   userName: {fileID: 1904965606}
+  errorMessage: {fileID: 0}
 --- !u!1 &2022950073
 GameObject:
   m_ObjectHideFlags: 0

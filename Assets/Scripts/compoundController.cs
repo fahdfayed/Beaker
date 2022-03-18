@@ -48,10 +48,13 @@ public class compoundController : MonoBehaviour
 
     private GameObject compStructObj;
     private GameObject compWeightObj;
-
+    private Animator anim;
+    private bool toShrink = false;
+    public List<GameObject> reactions;
     // Start is called before the first frame update
     void Awake()
     {
+        anim = this.gameObject.GetComponent<Animator>();
         myMainCamera = Camera.main;
         this.GetComponent<SpriteRenderer>().color = new Color(col.r, col.g, col.b, 1);
         compName = this.transform.GetChild(0).gameObject.GetComponent<TMP_Text>();
@@ -82,9 +85,9 @@ public class compoundController : MonoBehaviour
     void setName(string toSet)
     {
         char[] split = toSet.ToCharArray();
-        split = split.Take(12).ToArray();
+        split = split.Take(14).ToArray();
         string cropped = (string.Join("", split));
-        if (cropped.Length >= 12)
+        if (cropped.Length >= 14)
         {
             compName.text = cropped + "...";
         }
@@ -370,5 +373,15 @@ public class compoundController : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+    }
+
+
+    void shrink()
+    {
+        if (toShrink)
+        {
+            Debug.Log(this.gameObject.name + " is shrinking");
+            //anim.SetTrigger("shrink");
+        }
     }
 }

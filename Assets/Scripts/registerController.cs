@@ -9,23 +9,26 @@ using UnityEngine.SceneManagement;
 
 public class registerController : MonoBehaviour
 {
-public AuthManager authmanager;
- [Header("Register")]
+    public AuthManager authmanager;
+    [Header("Register")]
     public TMP_InputField usernameRegisterField;
     public TMP_InputField emailRegisterField;
     public TMP_InputField passwordRegisterField;
     public TMP_InputField passwordRegisterVerifyField;
     public TMP_Text warningRegisterText;
+    public profileController profileController;
 
     void Awake()
     {
         authmanager = GameObject.FindGameObjectWithTag("authmanager").GetComponent<AuthManager>();
+        profileController = GameObject.FindGameObjectWithTag("profilecontroller").GetComponent<profileController>();
     }
-     public void RegisterButton()
+    public void RegisterButton()
     {
         //Call the register coroutine passing the email, password, and username
         StartCoroutine(Register(emailRegisterField.text, passwordRegisterField.text, usernameRegisterField.text));
     }
+
     private IEnumerator Register(string _email, string _password, string _username)
     {
         if (_username == "")
@@ -33,12 +36,12 @@ public AuthManager authmanager;
             //If the username field is blank show a warning
             warningRegisterText.text = "Missing Username";
         }
-        else if(passwordRegisterField.text != passwordRegisterVerifyField.text)
+        else if (passwordRegisterField.text != passwordRegisterVerifyField.text)
         {
             //If the password does not match show a warning
             warningRegisterText.text = "Password Does Not Match!";
         }
-        else 
+        else
         {
             //Call the Firebase auth signin function passing the email and password
             var RegisterTask = authmanager.auth.CreateUserWithEmailAndPasswordAsync(_email, _password);
@@ -79,7 +82,7 @@ public AuthManager authmanager;
                 if (authmanager.User != null)
                 {
                     //Create a user profile and set the username
-                    UserProfile profile = new UserProfile{DisplayName = _username};
+                    UserProfile profile = new UserProfile { DisplayName = _username };
 
                     //Call the Firebase auth update user profile function passing the profile with the username
                     var ProfileTask = authmanager.User.UpdateUserProfileAsync(profile);
@@ -94,15 +97,18 @@ public AuthManager authmanager;
                     }
                     else
                     {
+
                         //Username is now set
                         //Now return to login screen
-                        var DBTask = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("username").SetValueAsync(_email);
+                        var DBTask = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("username").SetValueAsync(usernameRegisterField.text);
                         var userScore = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("score").SetValueAsync(0);
+                        var userTeam = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("team").SetValueAsync("na");
+                        var userRole = authmanager.DBreference.Child("users").Child(authmanager.User.UserId).Child("role").SetValueAsync("Member");
                         SceneManager.LoadScene("login");
-                                  
+
                         warningRegisterText.text = "";
 
-                      
+
                     }
                 }
             }

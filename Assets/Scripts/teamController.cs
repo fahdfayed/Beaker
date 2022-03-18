@@ -69,32 +69,30 @@ public class teamController : MonoBehaviour
             {
                 if (childSnapchot.Child("team").Value.ToString() == team)
                 {
-                        userss.Add(childSnapchot.Child("username").Value.ToString());
-                        scoress.Add(childSnapchot.Child("score").Value.ToString());
-                        counter++;
+                    userss.Add(childSnapchot.Child("username").Value.ToString());
+                    scoress.Add(childSnapchot.Child("score").Value.ToString());
+                    counter++;
                 }
-                    int[] scoressArray = new int[userss.Count];
-                    string[] userssArray = new string[userss.Count];
+                int[] scoressArray = new int[userss.Count];
+                string[] userssArray = new string[userss.Count];
 
-                    for (int i = 0; i < scoressArray.Length; i++)
-                    {
-                        userssArray[i] = userss[i];
-                        scoressArray[i] = Int32.Parse(scoress[i]);
-                    }
-                    Array.Sort(scoressArray, userssArray);
-                    Array.Reverse(scoressArray);
-                    Array.Reverse(userssArray);
-                    for (int i = 0; i < scoressArray.Length; i++)
-                    {
-                        teamMembers[i].text = userssArray[i];
-                        teamMembersScores[i].text = scoressArray[i].ToString();
-                    }
-
+                for (int i = 0; i < scoressArray.Length; i++)
+                {
+                    userssArray[i] = userss[i];
+                    scoressArray[i] = Int32.Parse(scoress[i]);
+                }
+                Array.Sort(scoressArray, userssArray);
+                Array.Reverse(scoressArray);
+                Array.Reverse(userssArray);
+                for (int i = 0; i < scoressArray.Length; i++)
+                {
+                    teamMembers[i].text = userssArray[i];
+                    teamMembersScores[i].text = scoressArray[i].ToString();
                 }
 
             }
 
         }
+
     }
-
-
+}

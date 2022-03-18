@@ -1,4 +1,3 @@
-   
 using System.Collections;
 using UnityEngine;
 using Firebase;
@@ -13,7 +12,7 @@ public class AuthManager : MonoBehaviour
     //Firebase variables
     [Header("Firebase")]
     public DependencyStatus dependencyStatus;
-    public FirebaseAuth auth;    
+    public FirebaseAuth auth;
     public FirebaseUser User;
     public DatabaseReference DBreference;
 
@@ -29,12 +28,12 @@ public class AuthManager : MonoBehaviour
     void Awake()
     {
         GameObject.DontDestroyOnLoad(this.gameObject);
-       
+
         //Check that all of the necessary dependencies for Firebase are present on the system
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
             dependencyStatus = task.Result;
-            
+
             if (dependencyStatus == DependencyStatus.Available)
             {
                 //If they are avalible Initialize Firebase
@@ -53,7 +52,7 @@ public class AuthManager : MonoBehaviour
         //Set the authentication instance object
         auth = FirebaseAuth.DefaultInstance;
         DBreference = FirebaseDatabase.DefaultInstance.RootReference;
-     
+
     }
 
     //Function for the login button
@@ -62,14 +61,14 @@ public class AuthManager : MonoBehaviour
         //Call the login coroutine passing the email and password
         StartCoroutine(Login(emailLoginField.text, passwordLoginField.text));
     }
-    
+
     //Function for the sign out button
     public void SignOutButton()
     {
         auth.SignOut();
         SceneManager.LoadScene("login");
-        
-    
+
+
     }
     //Function for the save button
 
@@ -114,7 +113,7 @@ public class AuthManager : MonoBehaviour
         {
             //User is now logged in
             //Now get the result  
-  
+
             User = LoginTask.Result;
             Debug.LogFormat("User signed in successfully: {0} ({1})", User.DisplayName, User.Email);
 
@@ -123,26 +122,26 @@ public class AuthManager : MonoBehaviour
             confirmLoginText.text = "Logged In";
             StartCoroutine(LoadUserData());
 
-            yield return new WaitForSeconds(2);        
-                
+            yield return new WaitForSeconds(2);
+
             UserProfile profile = new UserProfile
             {
                 DisplayName = _email,
             };
             var defaultUserTask = User.UpdateUserProfileAsync(profile);
             yield return new WaitUntil(predicate: () => defaultUserTask.IsCompleted);
-              if (defaultUserTask.Exception != null)
-                    {
-                        //If there are errors handle them
-                        Debug.LogWarning(message: $"Failed to register task with {defaultUserTask.Exception}");
-                        warningLoginText.text = "Username Set Failed!";
-                    }
+            if (defaultUserTask.Exception != null)
+            {
+                //If there are errors handle them
+                Debug.LogWarning(message: $"Failed to register task with {defaultUserTask.Exception}");
+                warningLoginText.text = "Username Set Failed!";
+            }
 
             SceneManager.LoadScene("lab");// Change to user data UI
             navBar.SetActive(true);
 
             confirmLoginText.text = "";
-            
+
         }
     }
 
@@ -164,7 +163,7 @@ public class AuthManager : MonoBehaviour
         else
         {
             //Auth username is now updated
-        }        
+        }
     }
 
     private IEnumerator UpdateUsernameDatabase(string _username)
@@ -192,19 +191,19 @@ public class AuthManager : MonoBehaviour
         //Get the currently logged in user data
         var DBTask = DBreference.Child("users").Child(User.UserId).GetValueAsync();
 
-            yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
+        yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
-            if (DBTask.Exception != null)
-            {
-                Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
-            }
-            else if (DBTask.Result.Value == null)
-            {
-    
-        
-            }
-            else
-            {
+        if (DBTask.Exception != null)
+        {
+            Debug.LogWarning(message: $"Failed to register task with {DBTask.Exception}");
+        }
+        else if (DBTask.Result.Value == null)
+        {
+
+
+        }
+        else
+        {
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
 
@@ -227,7 +226,7 @@ public class AuthManager : MonoBehaviour
             //Data has been retrieved
             DataSnapshot snapshot = DBTask.Result;
 
-         
+
 
             //Loop through every users UID
             foreach (DataSnapshot childSnapshot in snapshot.Children.Reverse<DataSnapshot>())
@@ -242,7 +241,7 @@ public class AuthManager : MonoBehaviour
             }
 
             //Go to scoareboard screen
-            SceneManager.LoadScene("teamleaderboard" );
+            SceneManager.LoadScene("teamleaderboard");
         }
     }
 }
